@@ -1,5 +1,42 @@
-body {
-    height: 100vh;
-    width: 100vw;
-    background-color: red;
+@import "./variables";
+@import "./reset";
+@function fontWeights($type) {
+    @return map-get($font-weights, $type);
+}
+
+@mixin flexCenter($flexDirection:row) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    flex-direction: $flexDirection;
+}
+
+@mixin theme($type:true) {
+    @if($type) {
+        background-color: darken($color: #ffffff, $amount: 100%);
+        color: lighten($color: #000000, $amount: 100%);
+    }
+}
+
+.dark {
+    @include theme();
+}
+
+.main {
+    @include flexCenter();
+    width: 100%-30%;
+    margin: 0 auto;
+    #{&}__para1 {
+        font-weight: fontWeights(bold);
+        padding: 10px;
+        &:hover {
+            background-color: red;
+            border-radius: 20px;
+            transition: .3s linear
+        }
+    }
+    #{&}__para2 {
+        @extend .main__para1;
+    }
 }

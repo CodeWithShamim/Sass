@@ -1,7 +1,36 @@
 body {
   height: 100vh;
   width: 100vw;
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  background-color: white;
+  color: black;
+  font-size: 20px;
+}
+
+.dark {
+  background-color: black;
+  color: white;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  flex-direction: row;
+  width: 70%;
+  margin: 0 auto;
+}
+.main .main__para1, .main .main__para2 {
+  font-weight: 700;
+  padding: 10px;
+}
+.main .main__para1:hover, .main .main__para2:hover {
   background-color: red;
+  border-radius: 20px;
+  transition: 0.3s linear;
 }
 
 /*# sourceMappingURL=style.css.map */
